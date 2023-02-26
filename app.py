@@ -11,10 +11,18 @@ db.init_app(app)
 
 
 
-@app.route('/display')
+@app.route('/createpost')
 def display():
-    l=[1,2,3]
-    return jsonify(l)
+	return jsonify("Hello World")
+# def create_post(title, content):
+#     try:
+#         post = Post(title, content)
+#         db.session.add(post)
+#         db.session.commit()
+#         return True
+#     except:
+#         db.session.rollback()
+#         return False
 
 
 
