@@ -1,30 +1,15 @@
-import logo from './logo.svg';
+import Logo from './logo.svg';
 import './App.css';
-import React ,{useState}from 'react'
-function App() {
-const [data,setData]=useState(null)
-const [print,setPrint]=useState(false)
+import React from 'react'
+import Navbar from "./Components/Navbar"
 
-  function getData(val)
-  {
-    console.warn(val.target.value)
-    setData(val.target.value)
-    setPrint(false)
-  }
-  return (
-    <div className="App">
-     {
-       print?
-       <h1> {data}</h1>
-       :null
-     }
-    <input type="text" onChange={getData} />
-    <button onClick={()=>setPrint(true)} >Print Data</button>
-    </div>
-  );
+function App () {
+    return (<React.Fragment>
+        <Navbar/> 
+     </React.Fragment>); 
 }
 
-export default App;
+export default App
 
 
 
