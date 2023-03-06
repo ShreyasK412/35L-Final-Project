@@ -13,11 +13,12 @@ function Navbar () {
         <h3> <img src='BBB.png' border="" height="100" width="100"
     onload="resizeImg(this, 200, 100);"  /> </h3>
         <nav ref={navRef}>
-            <a href = "/#"> Home </a>
-            <a href = "/#">Posts</a>
-            <a href = "/#"> News </a>
-            <a href = "/#"> Scores </a>
-            <a href = "/#"> About </a>
+            <a href = "home"> Home </a>
+            <a href = "posts">Posts</a>
+            <a href = "news"> News </a>
+            <a href = "scores"> Scores </a>
+            <a href = "about"> About </a>
+           
             <button className = "nav-btn nav-close-btn" onClick = {showNavbar}>
                 <FaTimes></FaTimes>
             </button>
