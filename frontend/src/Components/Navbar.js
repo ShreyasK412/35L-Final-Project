@@ -10,7 +10,8 @@ function Navbar () {
     }
 
     return (<header>
-        <h3>Shreyas</h3>
+        <h3> <img src='BBB.png' border="" height="100" width="100"
+    onload="resizeImg(this, 200, 100);"  /> </h3>
         <nav ref={navRef}>
             <a href = "/#"> Home </a>
             <a href = "/#">Posts</a>
