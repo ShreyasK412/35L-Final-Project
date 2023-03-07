@@ -95,6 +95,14 @@ header .nav-btn {
 
     }
     nav a {
-        font-size: 4.0rem
+        font-size: 4.0rem;
     }
+}
+.post {
+   font-size: 3.0rem;
+    color: var(--mainColorLight);
+    
+}
+.Textbox {
+ font-size: 3.0rem;
 }

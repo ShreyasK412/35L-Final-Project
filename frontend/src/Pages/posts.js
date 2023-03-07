@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Navbar from '../Components/Navbar';
+
    
 
 export default function Posts() {
     
-class App extends Component {
+    
+    
+class Textbox extends Component {
+
   constructor() {
+   
     super();
     this.state = {
       name: 'Shreyas'
+      
     };
-   
+  
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+   
   }
   
   handleChange(event) {
@@ -24,10 +31,10 @@ class App extends Component {
     console.log(this.state);
     event.preventDefault();
   }
-  
+ 
   render() {
     return (
-        
+        <div className='post'> 
       <div>
         <Navbar/>
         <div align="center">
@@ -39,14 +46,16 @@ class App extends Component {
               value={this.state.name} 
               onChange={this.handleChange} />
           <input type="submit" value="Submit" />
+          <h1> {this.state.name} </h1>
         </form>
         
         </div>
       </div>
-    );
+  </div>  ); 
   }
 }
-render(<App />, document.getElementById('root'));
+render(<Textbox />, document.getElementById('root'));
+
 
  }
 
