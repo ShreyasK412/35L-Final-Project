@@ -1,22 +1,28 @@
 import { useRef } from "react";
 import {FaBars, FaTimes} from "react-icons/fa";
 import "../Styles/main.css";
-
+const path = window.location.pathname; 
 function Navbar () {
+    
     const navRef = useRef();
 
     const showNavbar = () => {
         navRef.current.classList.toggle("responsive_nav")
-    }
-
+    } 
     return (<header>
-        <h3>Shreyas</h3>
+        <h3> <img src='BBB.png' border="" height="100" width="100"
+    onload="resizeImg(this, 200, 100);"  /> </h3>
         <nav ref={navRef}>
-            <a href = "/#"> Home </a>
-            <a href = "/#">Posts</a>
-            <a href = "/#"> News </a>
-            <a href = "/#"> Scores </a>
-            <a href = "/#"> About </a>
+            {/* <ul> <CustomLink href = "home"> Home </CustomLink> 
+            <CustomLink href = "posts"> Posts </CustomLink> 
+            </ul>
+           */}
+            <a href = "home"> Home </a>
+            <a href = "posts"> Posts </a>
+            <a href = "news"> News </a>
+            <a href = "scores"> Scores </a>
+            <a href = "about"> About </a>  
+         
             <button className = "nav-btn nav-close-btn" onClick = {showNavbar}>
                 <FaTimes></FaTimes>
             </button>
@@ -26,5 +32,15 @@ function Navbar () {
             </button>
     </header>);
 }
-
+function CustomLink({href,children, ...props}) {
+    return (
+        <li className={path === href ? "active" : ""}>
+            <a href = {href} {...props}>
+                {children}
+ 
+            </a>
+            
+        </li>
+    )
+}
 export default Navbar;
