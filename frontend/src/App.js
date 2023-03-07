@@ -13,6 +13,9 @@ function App () {
      case "/about":
       component = <About />
       break
+      case "/":
+      component = <Home />
+      break
       case "/home":
       component = <Home />
       break
