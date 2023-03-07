@@ -5,20 +5,26 @@ export default function News() {
     return (
     <div className="centerContent">
   <div className="selfCenter spaceBetween">
+  <div align="center">
     <TwitterTimelineEmbed
       onLoad={function noRefCheck(){}}
       options={{
-        height: 800,
+        height: 1000
       
         
       }}
       screenName="Underdog__NBA"
       sourceType="profile"
       theme="dark"
-      tweetLimit={50}
+      tweetLimit={100}
+      placeholder={<div style={{backgroundColor: 'black', color: 'white', margin: 10, padding: 10}}>Loading...</div>}
     />
   </div>
 </div>
+</div>
+
+
+
 //     return (
 //     <div>
 //         <TwitterTimelineEmbed
