@@ -25,9 +25,13 @@ header {
     background: var(--secondaryColor);
     color: var(--textColor);
     font-size: 3.0rem;
+}
 
 
-
+.container {
+    margin: 1rem;
+    text-align: center;
+    font-size: 5.0rem;
 }
 
 nav a {
