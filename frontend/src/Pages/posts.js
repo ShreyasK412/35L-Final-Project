@@ -14,7 +14,7 @@ class Textbox extends Component {
    
     super();
     this.state = {
-      name: 'Shreyas'
+      name: ''
       
     };
   
