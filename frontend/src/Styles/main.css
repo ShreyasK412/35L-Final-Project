@@ -9,7 +9,7 @@
 
 :root {
     --mainColor: #333237;
-    --mainColorLight: #7666E3;
+    --mainColorLight: #03066b;
     --secondaryColor: #000000;
     --textColor: #eee;
 
@@ -31,7 +31,8 @@ header {
 .container {
     margin: 1rem;
     text-align: center;
-    font-size: 5.0rem;
+    font-size: 4.0rem;
+    color: var(--mainColorLight)
 }
 
 nav a {
