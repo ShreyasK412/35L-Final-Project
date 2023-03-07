@@ -32,7 +32,7 @@ header {
     margin: 1rem;
     text-align: center;
     font-size: 4.0rem;
-    color: var(--mainColorLight)
+    color: var(--mainColorLight);
 }
 
 nav a {
