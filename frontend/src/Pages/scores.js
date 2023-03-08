@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import debounce from 'lodash/debounce';
 
-function Betting() {
+function Scores() {
   const [odds, setOdds] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,8 +10,9 @@ function Betting() {
   useEffect(() => {
     const fetchOdds = debounce(async () => {
       try {
-        const response = await axios.get('https://therundown-therundown-v1.p.rapidapi.com/sports/4/events', {
+        const response = await axios.get('https://therundown-therundown-v1.p.rapidapi.com/sports/%7Bsport-id%7D/dates', {
           params: {
+            limit: 50,
             include: 'scores',
             include_units: true,
             offset: 0
@@ -21,9 +22,11 @@ function Betting() {
             'X-RapidAPI-Host': 'therundown-therundown-v1.p.rapidapi.com',
           },
         });
+       
         const filteredOdds = {};
         const now = new Date();
         const today = now.toISOString().slice(0, 10);
+        
 
         for (const event of response.data.events) {
           const gameDate = new Date(event.event_date).toISOString().slice(0, 10);
@@ -44,9 +47,12 @@ function Betting() {
             }
           }
         }
+    
         setOdds(filteredOdds);
         setLoading(false);
       }
+    
+    
       catch (err) {
         setError(err.message);
         setLoading(false);
@@ -89,4 +95,4 @@ function Betting() {
   );
 }
 
-export default Betting;
+export default Scores;
