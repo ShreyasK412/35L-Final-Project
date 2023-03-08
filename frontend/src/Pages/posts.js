@@ -96,8 +96,13 @@ export default function Posts() {
         <div>
           {posts.map((post) => (
             <div key={post._id} className="post-box">
+             <div key={(post.tile)} className = "post-title">
               <h2>{post.title}</h2>
+            </div>
+            <div key={(post.content)} className = "post-content">
               <p>{post.content}</p>
+             
+            </div>
             </div>
           ))}
           {error && <p>{error}</p>}

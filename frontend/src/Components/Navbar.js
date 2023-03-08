@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import {FaBars, FaTimes} from "react-icons/fa";
 import "../Styles/main.css";
+
 const path = window.location.pathname; 
 function Navbar () {
     

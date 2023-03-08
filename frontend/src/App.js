@@ -7,6 +7,7 @@ import Scores from './Pages/scores'
 import News from './Pages/news'
 import Posts from './Pages/posts'
 
+
 function App () {  
     let component
    switch (window.location.pathname) {
@@ -28,6 +29,7 @@ function App () {
       case "/posts":
       component = <Posts />
       break
+     
 
    }
     return (<>

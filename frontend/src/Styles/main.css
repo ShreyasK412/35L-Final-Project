@@ -99,7 +99,7 @@ header .nav-btn {
     }
 }
 .post {
-   font-size: 3.0rem;
-    color: var(--mainColorLight);
+   font-size: 1.5rem;
+    color: var(--secondaryColor);
     
 }
