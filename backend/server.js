@@ -6,6 +6,7 @@ const mongoose=require('mongoose')
 const PostRoutes = require('./routes/posts')
 
 // express app
+
 const app = express()
 
 // middleware

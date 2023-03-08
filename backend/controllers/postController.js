@@ -3,28 +3,28 @@ const mongoose = require('mongoose')
 
 
 // get all posts
+const getPosts = async (req, res) => {
+  const posts = await Post.find({}).sort({createdAt: -1})
+
+  res.status(200).json(posts)
+}
+
+// get a single post
 const getPost = async (req, res) => {
-    const posts = await Post.find({}).sort({createdAt: -1})
-  
-    res.status(200).json(posts)
+  const { id } = req.params
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'No such post'})
   }
-  
-  // get a single post
-  const getPosts = async (req, res) => {
-    const { id } = req.params
-  
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(404).json({error: 'No such post'})
-    }
-  
-    const post = await Post.findById(id)
-  
-    if (!post) {
-      return res.status(404).json({error: 'No such post'})
-    }
-  
-    res.status(200).json(post)
+
+  const post = await Post.findById(id)
+
+  if (!post) {
+    return res.status(404).json({error: 'No such post'})
   }
+
+  res.status(200).json(post)
+}
   
   // create a new post
   const createPost = async (req, res) => {
