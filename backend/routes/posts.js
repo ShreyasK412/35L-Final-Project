@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const {
   getPosts,
   getPost,
@@ -6,7 +7,11 @@ const {
   deletePost, 
   updatePost
 } = require('../controllers/postController')
+
 const router = express.Router()
+
+router.use(cors())
+
 // GET all posts
 router.get('/', getPosts)
 

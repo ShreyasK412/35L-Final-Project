@@ -1,0 +1,22 @@
+.post {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post-box {
+    border: 1px solid black;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .post-title {
+    font-size: 5px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .post-content {
+    font-size: 5px;
+    line-height: 1.5;
+  }
+  
