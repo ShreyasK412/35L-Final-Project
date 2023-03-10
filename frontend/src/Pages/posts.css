@@ -1,48 +1,32 @@
 .post {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .post-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
     border: 1px solid black;
-    padding: 16px;
-    margin-bottom: 16px;
-    height: 300px;
+    height: 7000;
   }
   
-  .post-title {
-    font-size: 2.0rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: white ;
-    background-color: var(--secondaryColor);
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .post-content {
-    font-size: 1.0rem;
-    line-height: 1.5;
-    color: var(--secondaryColor);
+    margin-top: 10px;
+    text-align: left;
   }
   
-  .create-post {
-    font-size: 3.0rem;
-    color: var(--mainColorLight);
+  .post-title{
+    text-align: center;
   }
-  .post-box {
-    position: relative;
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
   }
-  
-  .post-meta {
-    position: absolute;
-    bottom: 0;
-    right: -1;
-  }
-  
   
   .post-likes {
     margin-right: 10px;
-  }
-  
-  .post-timestamp {
-    margin-left: 10px;
   }
