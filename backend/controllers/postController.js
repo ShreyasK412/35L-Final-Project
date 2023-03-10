@@ -57,22 +57,23 @@ const deletePost = async (req, res) => {
   
   // update a post
   const updatePost = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
   
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({error: 'No such post'})
+      return res.status(400).json({ error: 'No such post' });
     }
   
-    const post = await Post.findOneAndUpdate({_id: id}, {
-      ...req.body
-    })
-  
-    if (!post) {
-      return res.status(400).json({error: 'No such post'})
+    try {
+      const post = await Post.findByIdAndUpdate(
+        id,
+        { ...req.body },
+        { new: true }
+      );
+      res.status(200).json(post);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
     }
-  
-    res.status(200).json(post)
-  }
+  };
   
   module.exports = {
     getPosts,

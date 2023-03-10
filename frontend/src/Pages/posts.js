@@ -91,23 +91,25 @@ export default function Posts() {
         {error && <p>{error}</p>}
       </div>
       
-      <div align="center" className="recent-posts">
+      <div align="center" className="recent-posts" style={{position: "relative"}}>
         <h1>Recent Posts</h1>
         <div>
           {posts.map((post) => (
             <div key={post._id} className="post-box">
-             <div key={(post.tile)} className = "post-title">
-              <h2>{post.title}</h2>
-            </div>
-            <div key={(post.content)} className = "post-content">
-              <p>{post.content}</p>
-             
-            </div>
+              <div key={(post.tile)} className = "post-title">
+                <h2>{post.title}</h2>
+              </div>
+              <div key={(post.content)} className = "post-content">
+                <p>{post.content}</p>
+              </div>
+              <div className="post-meta">
+                <span className="post-likes">Likes: {post.likes}</span>
+                <span className="post-timestamp">Creat:{new Date(post.createdAt).toLocaleString()}</span>
+              </div>
             </div>
           ))}
           {error && <p>{error}</p>}
         </div>
       </div>
     </div>
-  );
-}
+  );}

@@ -28,3 +28,21 @@
     font-size: 3.0rem;
     color: var(--mainColorLight);
   }
+  .post-box {
+    position: relative;
+  }
+  
+  .post-meta {
+    position: absolute;
+    bottom: 0;
+    right: -1;
+  }
+  
+  
+  .post-likes {
+    margin-right: 10px;
+  }
+  
+  .post-timestamp {
+    margin-left: 10px;
+  }
