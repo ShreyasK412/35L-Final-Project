@@ -1,0 +1,9 @@
+.PlayerStats {
+    font-size: 3.0rem;
+    padding: 100px;
+    color: var(--secondaryColor);
+}
+.StatsText {
+    font-size: 2.0rem;
+    color: var(--mainColorLight);
+}

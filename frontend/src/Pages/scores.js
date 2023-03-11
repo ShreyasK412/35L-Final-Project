@@ -1,5 +1,12 @@
 
 import './scores.css';
+import axios from 'axios';
+import debounce from 'lodash/debounce';
+import React, {Component} from 'react';
+import Stats from './stats';
+
+
+
 
 export default function Scores() {
     const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
@@ -47,7 +54,8 @@ export default function Scores() {
     });
 
     return (
-        <div>
+   
+        <div> <div align="center"> 
         <h1 class="premleague">Premier League Standings <img class="premleagueicon" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
         <table id="standings-table">
             <thead>
@@ -66,6 +74,8 @@ export default function Scores() {
             <tbody>
             </tbody>
         </table>
+        <Stats/>
+        </div>
         </div>
     )
 }
