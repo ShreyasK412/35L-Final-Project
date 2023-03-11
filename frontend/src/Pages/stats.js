@@ -60,7 +60,9 @@ class Stats extends Component {
       <div className="PlayerStats">
        <form onSubmit={this.handleSubmit}>
         <h2> NBA Player Stats </h2>
+        <div className = "Stats_Subtitle"> 
         <h4> Live Updated 2022-2023 Stats</h4>
+        </div>
          <label>
             Name
            <input 

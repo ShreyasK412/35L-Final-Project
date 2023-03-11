@@ -2,8 +2,15 @@
     font-size: 3.0rem;
     padding: 100px;
     color: var(--secondaryColor);
+    border: 1px solid black;
+    margin-top: 50px;
 }
 .StatsText {
     font-size: 2.0rem;
     color: var(--mainColorLight);
+  
+}
+.Stats_Subtitle {
+    color: var(--mainColor);
+    opacity: 0.7;
 }
