@@ -63,6 +63,7 @@ class Stats extends Component {
         <div className = "Stats_Subtitle"> 
         <h4> Live Updated 2022-2023 Stats</h4>
         </div>
+        <div className = "Name_Text"> 
          <label>
             Name
            <input 
@@ -70,12 +71,12 @@ class Stats extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             placeholder="Please Enter Player Name"
-           />
-         </label>
+           /> 
+         </label> </div>
          <input type="submit" value="Submit"/>
        </form>
        <div className="StatsText"> 
-       games played: {this.state.playerStats["games_played"]}
+        Games Played: {this.state.playerStats["games_played"]}
        <br />
        Points Per Game: {this.state.playerStats["pts"]}
        <br />
