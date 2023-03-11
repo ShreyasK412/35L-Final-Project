@@ -77,13 +77,15 @@ class Stats extends Component {
        <div className="StatsText"> 
        games played: {this.state.playerStats["games_played"]}
        <br />
-       points averaged: {this.state.playerStats["pts"]}
+       Points Per Game: {this.state.playerStats["pts"]}
        <br />
-       rebounds averaged: {this.state.playerStats["reb"]}
+       Rebounds Per Game: {this.state.playerStats["reb"]}
        <br />
-       assists averaged: {this.state.playerStats["ast"]}
+       Assists Per Game: {this.state.playerStats["ast"]}
        <br />
-       Field Goal %: {this.state.playerStats["fg_pct"]}
+       Field Goal: {this.state.playerStats["fg_pct"] * 100 + '%'}
+       <br />
+       3P: {this.state.playerStats["fg3_pct"] * 100 + '%'}
        </div>
       </div>
     );
