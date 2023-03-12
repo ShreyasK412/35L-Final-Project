@@ -2,14 +2,86 @@
 import './scores.css';
 import axios from 'axios';
 import debounce from 'lodash/debounce';
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import Stats from './stats';
 
-
-
+const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 
 export default function Scores() {
-    const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
+
+    const [fixtureTable, setFixtureTable] = useState('');
+
+    const getFixtureTable = async () => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const dateString = `${year}-${month}-${day}`;
+
+        const url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
+
+        const response = await fetch(url, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": FOOTBALL_KEY,
+        }
+        });
+        const data = await response.json();
+        // console.log(data)
+
+        const fixturesData = data.response;
+        let tableHtml = `
+        <h1 class="recentresults">Recent Match Results <img class="premleagueicon2" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
+        <table id="fixtures-table">
+            <thead>
+            <tr>
+                <th>Home Team</th>
+                <th>Score</th>
+                <th>Away Team</th>
+            </tr>
+            </thead>
+            <tbody>
+        `;
+
+        fixturesData.forEach((fixture, index) => {
+        const homeTeam = fixture.teams.home;
+        const awayTeam = fixture.teams.away;
+        const score = fixture.score.fulltime;
+
+        tableHtml += `
+            <tr>
+            <td>
+                <img src=${homeTeam.logo} class="logos">
+                <div></div>
+                <span class="team-name">${homeTeam.name}</span>
+            </td>
+            <td>
+                <span class="score">${score.home} - ${score.away}</span>
+            </td>
+            <td>
+                <img src=${awayTeam.logo} class="logos">
+                <div></div>
+                <span class="team-name">${awayTeam.name}</span>
+            </td>
+            </tr>
+        `;
+        })
+
+        tableHtml += `
+            </tbody>
+        </table>
+        `;
+
+        return tableHtml;
+    }
+
+    useEffect(() => {
+        getFixtureTable()
+        .then(tableHtml => setFixtureTable(tableHtml))
+        .catch(err => console.log(err));
+    }, []);
+
     const url = "https://v3.football.api-sports.io/standings?league=39&season=2022";
     fetch(url, {
         "method": "GET",
@@ -54,28 +126,30 @@ export default function Scores() {
     });
 
     return (
-   
-        <div> <div align="center"> 
-        <h1 class="premleague">Premier League Standings <img class="premleagueicon" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
-        <table id="standings-table">
-            <thead>
+        <div className="container">
+            <div className="standings-container">
+            <h1 class="premleague">Premier League Standings <img class="premleagueicon" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
+            <table id="standings-table">
+                <thead>
                 <tr>
-                <th>Club</th>
-                <th>MP</th>
-                <th>W</th>
-                <th>D</th>
-                <th>L</th>
-                <th>GF</th>
-                <th>GA</th>
-                <th>GD</th>
-                <th>Pts</th>
+                    <th>Club</th>
+                    <th>MP</th>
+                    <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>Pts</th>
                 </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <Stats/>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            </div>
+            <div className="fixtures-container" dangerouslySetInnerHTML={{ __html: fixtureTable }}>
+            </div>
         </div>
-        </div>
-    )
+      )
 }
+
