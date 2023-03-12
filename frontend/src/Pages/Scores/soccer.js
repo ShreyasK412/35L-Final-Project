@@ -144,7 +144,7 @@ export default function Soccer() {
     return (
         <div className="container">
             <div className="standings-container">
-            <h1 class="premleague">Premier League Standings <img class="premleagueicon" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
+            <h1 className="premleague">Premier League Standings <img className="premleagueicon" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
             <table id="standings-table">
                 <thead>
                 <tr>
