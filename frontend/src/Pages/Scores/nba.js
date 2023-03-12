@@ -1,5 +1,5 @@
 import './nba.css';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 const BASKETBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 
@@ -38,7 +38,7 @@ export default function Basketball() {
             <td>${team.win.home}-${team.loss.home}</td>
             <td>${team.win.away}-${team.loss.away}</td>
             <td>${team.win.lastTen}-${team.loss.lastTen}</td>
-            <td>${team.streak}${team.winStreak ? 'W' : 'L'}</td>
+            <td>${team.winStreak ? 'W' : 'L'}${team.streak}</td>
             `;
             // console.log(tr.innerHTML);
             tbody.appendChild(tr);
@@ -82,7 +82,7 @@ export default function Basketball() {
             <td>${team.win.home}-${team.loss.home}</td>
             <td>${team.win.away}-${team.loss.away}</td>
             <td>${team.win.lastTen}-${team.loss.lastTen}</td>
-            <td>${team.streak}${team.winStreak ? 'W' : 'L'}</td>
+            <td>${team.winStreak ? 'W' : 'L'}${team.streak}</td>
             `;
             // console.log(tr.innerHTML);
             tbody.appendChild(tr);
@@ -95,25 +95,6 @@ export default function Basketball() {
 
     return (
         <div className="nba-standings-container">
-        <div className="e-container">
-            <h1 className="eaststandings">East Conference Standings <img className="easticon" src="https://sportsfly.cbsistatic.com/fly-0425/bundles/sportsmediacss/images/conference-logos/nba/EAST.svg" alt=""></img></h1>
-            <table id="standings-table-nba-e">
-                <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>W</th>
-                    <th>L</th>
-                    <th>Pct</th>
-                    <th>GB</th>
-                    <th>Home</th>
-                    <th>Away</th>
-                    <th>L10</th>
-                    <th>Strk</th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
         <div className="w-container">
             <h1 className="weststandings">West Conference Standings <img className="westicon" src="https://sportsfly.cbsistatic.com/fly-0425/bundles/sportsmediacss/images/conference-logos/nba/WEST.svg" alt=""></img></h1>
             <table id="standings-table-nba-w">
@@ -134,6 +115,25 @@ export default function Basketball() {
                 </tbody>
             </table>
         </div>
+        <div className="e-container">
+            <h1 className="eaststandings">East Conference Standings <img className="easticon" src="https://sportsfly.cbsistatic.com/fly-0425/bundles/sportsmediacss/images/conference-logos/nba/EAST.svg" alt=""></img></h1>
+            <table id="standings-table-nba-e">
+                <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>Pct</th>
+                    <th>GB</th>
+                    <th>Home</th>
+                    <th>Away</th>
+                    <th>L10</th>
+                    <th>Strk</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
         </div>
     )
