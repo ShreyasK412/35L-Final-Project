@@ -84,9 +84,9 @@ class Stats extends Component {
        <br />
        Assists Per Game: {this.state.playerStats["ast"]}
        <br />
-       Field Goal: {this.state.playerStats["fg_pct"] * 100 + '%'}
+       Field Goal: {((Math.round(1000 * this.state.playerStats["fg_pct"]))/10) + '%'}
        <br />
-       3P: {this.state.playerStats["fg3_pct"] * 100 + '%'}
+       3P: {((Math.round(1000 * this.state.playerStats["fg3_pct"]))/10) + '%'}
        </div>
       </div>
     );
