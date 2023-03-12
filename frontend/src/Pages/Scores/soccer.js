@@ -1,24 +1,21 @@
-
-import './scores.css';
-import axios from 'axios';
-import debounce from 'lodash/debounce';
-import React, {Component, useState, useEffect} from 'react';
-import Stats from './stats';
+import './soccer.css';
+import React, {useState, useEffect} from 'react';
 
 const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 
-export default function Scores() {
+export default function Soccer() {
 
     const [fixtureTable, setFixtureTable] = useState('');
+    const [lastGameDate, setLastGameDate] = useState(null);
 
     const getFixtureTable = async () => {
-        const currentDate = new Date();
+        let currentDate = new Date();
         const year = currentDate.getFullYear();
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
         const dateString = `${year}-${month}-${day}`;
 
-        const url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
+        let url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
 
         const response = await fetch(url, {
         "method": "GET",
@@ -27,8 +24,27 @@ export default function Scores() {
             "x-rapidapi-key": FOOTBALL_KEY,
         }
         });
-        const data = await response.json();
+        let data = await response.json();
         // console.log(data)
+        let curr_length = data.response.length
+
+        if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)
+        {
+            url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${lastGameDate}`;
+
+            const response = await fetch(url, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "v3.football.api-sports.io",
+                "x-rapidapi-key": FOOTBALL_KEY,
+            }
+            });
+            data = await response.json();
+        }
+        else
+        {
+            setLastGameDate(dateString);
+        }
 
         const fixturesData = data.response;
         let tableHtml = `
@@ -152,4 +168,3 @@ export default function Scores() {
         </div>
       )
 }
-

@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from "./Components/Navbar"
 import About from "./Pages/about"
 import Home from "./Pages/home"
-import Scores from './Pages/scores'
+import Scores from './Pages/Scores/scores'
 import News from './Pages/news'
 import Posts from './Pages/posts'
 
