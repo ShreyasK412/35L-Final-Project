@@ -1,9 +1,9 @@
-import './nba.css';
+import './nba-standings.css';
 import React from 'react';
 
 const BASKETBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 
-export default function Basketball() {
+export default function BasketballStandings() {
     const url_east = "https://v2.nba.api-sports.io/standings?league=Standard&season=2022&conference=East";
     fetch(url_east, {
         "method": "GET",

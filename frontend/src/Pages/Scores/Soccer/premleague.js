@@ -1,9 +1,9 @@
-import './soccer.css';
+import './premleague.css';
 import React, {useState, useEffect} from 'react';
 
 const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 
-export default function Soccer() {
+export default function PremLeague() {
 
     const [fixtureTable, setFixtureTable] = useState('');
     const [lastGameDate, setLastGameDate] = useState(null);
