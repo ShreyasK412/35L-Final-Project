@@ -10,6 +10,7 @@ export default function Scores() {
         <div className="basketball-section">
             <Basketball/>
         </div>
+        <br/>
         <div className="soccer-section">
             <Soccer/>
         </div>

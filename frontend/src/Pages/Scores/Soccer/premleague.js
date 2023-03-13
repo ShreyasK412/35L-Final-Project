@@ -26,7 +26,7 @@ export default function PremLeague() {
         });
         let data = await response.json();
         // console.log(data)
-        let curr_length = data.response.length
+        let curr_length = data.response.length;
 
         if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)
         {
@@ -48,7 +48,7 @@ export default function PremLeague() {
 
         const fixturesData = data.response;
         let tableHtml = `
-        <h1 class="recentresults">Recent Match Results <img class="premleagueicon2" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
+        <h1 class="recentresults">Recent Matchday Results <img class="premleagueicon2" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
         <table id="fixtures-table">
             <thead>
             <tr>

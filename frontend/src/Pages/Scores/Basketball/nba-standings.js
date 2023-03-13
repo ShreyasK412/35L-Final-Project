@@ -16,7 +16,7 @@ export default function BasketballStandings() {
     .then(data => {
         const standingsData = data.response;
         const sortedData = standingsData.sort((a,b) => a.conference.rank - b.conference.rank)
-        console.log(sortedData);
+        // console.log(sortedData);
 
         const tbody = document.querySelector('#standings-table-nba-e tbody');
         // console.log(tbody);
@@ -60,7 +60,7 @@ export default function BasketballStandings() {
     .then(data => {
         const standingsData = data.response;
         const sortedData = standingsData.sort((a,b) => a.conference.rank - b.conference.rank)
-        console.log(sortedData);
+        // console.log(sortedData);
 
         const tbody = document.querySelector('#standings-table-nba-w tbody');
         // console.log(tbody);
