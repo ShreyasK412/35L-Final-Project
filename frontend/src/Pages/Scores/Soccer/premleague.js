@@ -73,7 +73,19 @@ export default function PremLeague() {
                 <span class="team-name">${homeTeam.name}</span>
             </td>
             <td>
-                <span class="score">${score.home} - ${score.away}</span>
+                <span style="color: ${score.home > score.away ? 'green' : (score.home < score.away ? 'red' : 'blue')}">
+                ${score.home > score.away ? 'W' : (score.home < score.away ? 'L' : 'D')}
+                </span>
+                &nbsp
+                <span style="color: ${score.home < score.away ? 'green' : (score.home > score.away ? 'red' : 'blue')}">
+                    ${score.home < score.away ? 'W' : (score.home > score.away ? 'L' : 'D')}
+                </span>
+                <br/>
+                <span class="score">
+                ${score.home} - ${score.away}
+                
+                </span>
+                
             </td>
             <td>
                 <img src=${awayTeam.logo} class="logos">
