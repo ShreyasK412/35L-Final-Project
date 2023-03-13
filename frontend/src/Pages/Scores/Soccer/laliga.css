@@ -1,4 +1,17 @@
-table {
+.soccer-container-laliga {
+    display: flex;
+    width: 100%;
+  }
+  
+  .standings-container-laliga,
+  .fixtures-container-laliga {
+    flex: 1;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+  }
+  
+  table {
     border-collapse: collapse;
     width: 100%;
   }
@@ -37,56 +50,56 @@ table {
   }
   
   /* Set styles for table header */
-  #standings-table th {
+  #standings-table-laliga th {
     font-size: 1.2rem;
     font-weight: bold;
   }
   
   /* Set styles for first column */
-  #standings-table td:first-child {
+  #standings-table-laliga td:first-child {
     display: flex;
     align-items: center;
     gap: 10px;
   }
   
   /* Set styles for team name column */
-  #standings-table td:nth-child(2) {
+  #standings-table-laliga td:nth-child(2) {
     font-size: 1.2rem;
     font-weight: bold;
   }
   
   /* Set styles for position column */
-  #standings-table td:nth-child(1) {
+  #standings-table-laliga td:nth-child(1) {
     font-size: 1.2rem;
   }
   
   /* Set styles for points column */
-  #standings-table td:last-child {
+  #standings-table-laliga td:last-child {
     font-size: 1.2rem;
     font-weight: bold;
     color: rgb(0, 0, 0);
   }
   
-  #standings-table tr:nth-child(-n+20) {
+  #standings-table-laliga tr:nth-child(-n+20) {
     font-size: 1.2rem;
     color: rgb(0, 0, 0);
   }
   
-  #standings-table td .rank {
+  #standings-table-laliga td .rank {
     width: 20%;
     text-align: center;
   }
   
-  #standings-table td .logos {
+  #standings-table-laliga td .logos {
     max-height: 1.2rem;
     width: auto;
   }
   
-  #standings-table td .team-name {
+  #standings-table-laliga td .team-name {
     width: 70%;
   }
   
-  .premleague {
+  .laliga {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -96,14 +109,14 @@ table {
     width: 100%;
   }
   
-  .premleagueicon {
+  .laligaicon {
     max-height: 2rem;
     max-width: 2rem;
     background-color: #fff;
     color: rgb(0, 0, 0);
   }
   
-  .recentresults {
+  .recentresults-laliga {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -113,24 +126,24 @@ table {
     width: 100%;
   }
   
-  .premleagueicon2 {
+  .laligaicon2 {
     max-height: 2rem;
     max-width: 2rem;
     background-color: #fff;
     color: rgb(0, 0, 0);
   }
   
-  #fixtures-table th {
+  #fixtures-table-laliga th {
     font-size: 1.5rem;
     align-items: center;
   }
   
-  #fixtures-table td {
+  #fixtures-table-laliga td {
     font-size: 2.0rem;
     color:rgb(0,0,0);
   }
   
-  #fixtures-table td .logos {
+  #fixtures-table-laliga td .logos {
     max-height: 4.0rem;
     max-width: 4.0rem;
   }
