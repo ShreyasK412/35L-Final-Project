@@ -1,0 +1,184 @@
+.nba-standings-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .e-container,
+  .w-container {
+    flex: 1;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+  }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    text-align: center;
+    padding: 12px;
+  }
+
+  th {
+    background-color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
+  }
+
+  /* Set alternating row background colors */
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  /* Set hover styles for rows */
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+
+  /* Set column styles */
+  th:first-child,
+  td:first-child {
+    text-align: center;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Set styles for table header */
+  #standings-table-nba-e th {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Set styles for first column */
+  #standings-table-nba-e td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Set styles for team name column */
+  #standings-table-nba-e td:nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Set styles for position column */
+  #standings-table-nba-e td:nth-child(1) {
+    font-size: 1.2rem;
+  }
+
+  /* Set styles for points column */
+  #standings-table-nba-e td:last-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+  }
+
+  #standings-table-nba-e tr:nth-child(-n+20) {
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+  }
+
+  #standings-table-nba-e td .rank {
+    width: 20%;
+    text-align: center;
+  }
+
+  #standings-table-nba-e td .logos {
+    max-height: 1.2rem;
+    width: auto;
+  }
+
+  #standings-table-nba-e td .team-name {
+    width: 70%;
+  }
+
+  .eaststandings {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .easticon {
+    max-height: 2rem;
+    max-width: 2rem;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+  }
+
+  /* Set styles for table header */
+  #standings-table-nba-w th {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Set styles for first column */
+  #standings-table-nba-w td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Set styles for team name column */
+  #standings-table-nba-w td:nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Set styles for position column */
+  #standings-table-nba-w td:nth-child(1) {
+    font-size: 1.2rem;
+  }
+
+  /* Set styles for points column */
+  #standings-table-nba-w td:last-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+  }
+
+  #standings-table-nba-w tr:nth-child(-n+20) {
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+  }
+
+  #standings-table-nba-w td .rank {
+    width: 20%;
+    text-align: center;
+  }
+
+  #standings-table-nba-w td .logos {
+    max-height: 1.2rem;
+    width: auto;
+  }
+
+  #standings-table-nba-w td .team-name {
+    width: 70%;
+  }
+
+  .weststandings {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .westicon {
+    max-height: 2rem;
+    max-width: 2rem;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+  }
