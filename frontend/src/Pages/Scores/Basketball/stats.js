@@ -47,12 +47,12 @@ class Stats extends Component {
     }
 
     getPlayerImageId = () => {
-      const url_player = "https://api.sportsdata.io/v3/nba/scores/json/Players/${this.state.playerName}"
+      const url_player = 'https://api.sportsdata.io/v3/nba/scores/json/Players/${this.state.playerName}'
       fetch(url_player, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "v2.nba.api-sports.io",
-            "x-rapidapi-key": "25e3dcc42b7508519df698b88599a569",
+            "x-rapidapi-key": "bde21ad47f7846b0a6a8a6dfb5696db2",
         }
       })
       .then(async res => {
@@ -118,7 +118,9 @@ class Stats extends Component {
            <input type="submit" value="Submit"/>
          </form>
          <div className="PlayerImage">
-          <img src= "https://s1.ticketm.net/dam/a/199/2a4b8226-72c1-4571-9293-28e1192f0199_SOURCE"/>
+          <img src= "https://s1.ticketm.net/dam/a/199/2a4b8226-72c1-4571-9293-28e1192f0199_SOURCE"
+          style={{width: "30rem", height: "auto"}}
+          />
         </div> 
          <div className="StatsText"> 
           Games Played: {this.state.playerStats["games_played"]}
