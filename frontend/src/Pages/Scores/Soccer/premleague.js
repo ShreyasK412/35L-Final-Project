@@ -6,31 +6,16 @@ const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 export default function PremLeague() {
 
     const [fixtureTable, setFixtureTable] = useState('');
-    const [lastGameDate, setLastGameDate] = useState(null);
 
     const getFixtureTable = async () => {
         let currentDate = new Date();
-        const year = currentDate.getFullYear();
-        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-        const day = String(currentDate.getDate()).padStart(2, '0');
-        const dateString = `${year}-${month}-${day}`;
+        while (true) {
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+            const day = String(currentDate.getDate()).padStart(2, '0');
+            const dateString = `${year}-${month}-${day}`;
 
-        let url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
-
-        const response = await fetch(url, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": FOOTBALL_KEY,
-        }
-        });
-        let data = await response.json();
-        // console.log(data)
-        let curr_length = data.response.length;
-
-        if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)
-        {
-            url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${lastGameDate}`;
+            let url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
 
             const response = await fetch(url, {
             "method": "GET",
@@ -39,13 +24,20 @@ export default function PremLeague() {
                 "x-rapidapi-key": FOOTBALL_KEY,
             }
             });
-            data = await response.json();
-        }
-        else
-        {
-            setLastGameDate(dateString);
-        }
+            var data = await response.json();
+            // console.log(data)
+            let curr_length = data.response.length;
 
+            if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)
+            {
+                currentDate.setDate(currentDate.getDate() - 1);
+            }
+            else
+            {
+                break;
+            }
+        }
+        
         const fixturesData = data.response;
         let tableHtml = `
         <h1 class="recentresults">Recent Matchday Results <img class="premleagueicon2" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
