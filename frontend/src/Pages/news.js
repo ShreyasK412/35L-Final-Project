@@ -40,7 +40,7 @@ export default function News() {
       
         
       }}
-      screenName="Underdog__NBA"
+      screenName="Underdog__NFL"
       sourceType="profile"
       theme="dark"
       tweetLimit={100}
