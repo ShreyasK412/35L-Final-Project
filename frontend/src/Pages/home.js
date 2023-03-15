@@ -22,10 +22,12 @@ export default function Home() {
         </div>
         <footer>
             <br></br>
-            <a href="https://github.com/ShreyasK412/35L-Final-Project"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50px" height="50px"/></a>
-            <a href="https://www.reddit.com/r/ucla/"><img src="https://www.redditinc.com/assets/images/site/reddit-logo.png" width="50px" height="50px"/></a>
-            <a href="https://twitter.com/ucla"><img src="https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg" width="50px" height="50px"/></a>
-
+            <div>
+            <a href="https://github.com/ShreyasK412/35L-Final-Project"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="100px" height="50px"/></a>
+            <a href="https://www.reddit.com/r/ucla/"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/52/52053.png" width="100px" height="50px"/></a>
+            <a href="https://twitter.com/ucla"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/60/60580.png" width="100px" height="50px"/></a>
+            <a href="https://www.instagram.com/ucla"><img class="footerimages" src="https://www.pngall.com/wp-content/uploads/5/Instagram-Logo.png" width="100px" height="50px"/></a>
+            </div>
         </footer>
         
 
