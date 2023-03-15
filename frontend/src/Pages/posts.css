@@ -1,32 +1,53 @@
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-box {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
 .post {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid black;
-    height: 7000;
-  }
-  
-  .post-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .post-content {
-    margin-top: 10px;
-    text-align: left;
-  }
-  
-  .post-title{
-    text-align: center;
-  }
-  .post-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .post-likes {
-    margin-right: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-title {
+  font-size: 24x;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.post-timestamp {
+  font-size: 14px;
+  margin: 0;
+}
+
+.post-content {
+  margin-top: 10px;
+  text-align: left;
+  font-size: medium;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
