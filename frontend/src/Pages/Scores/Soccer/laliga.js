@@ -149,7 +149,7 @@ export default function LaLiga() {
     return (
         <div className="soccer-container-laliga">
             <div className="standings-container-laliga">
-            <h1 className="laliga">Premier League Standings <img className="laligaicon" src="https://media.api-sports.io/football/leagues/140.png" alt=""></img></h1>
+            <h1 className="laliga">La Liga Standings <img className="laligaicon" src="https://media.api-sports.io/football/leagues/140.png" alt=""></img></h1>
             <table id="standings-table-laliga">
                 <thead>
                 <tr>

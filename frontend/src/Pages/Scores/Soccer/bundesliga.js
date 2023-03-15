@@ -149,7 +149,7 @@ export default function Bundesliga() {
     return (
         <div className="soccer-container-bundesliga">
             <div className="standings-container-bundesliga">
-            <h1 className="bundesliga">Premier League Standings <img className="bundesligaicon" src="https://media.api-sports.io/football/leagues/78.png" alt=""></img></h1>
+            <h1 className="bundesliga">Bundesliga Standings <img className="bundesligaicon" src="https://media.api-sports.io/football/leagues/78.png" alt=""></img></h1>
             <table id="standings-table-bundesliga">
                 <thead>
                 <tr>
