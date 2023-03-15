@@ -4,7 +4,7 @@
 
 ### `git clone https://github.com/ShreyasK412/35L-Final-Project`
 
-This will clone the repository locally and can you now switch the directory into the project
+This will clone the repository locally and you can now switch the directory into the project
 
 ## Backend
 
