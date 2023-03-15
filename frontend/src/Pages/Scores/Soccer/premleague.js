@@ -25,6 +25,7 @@ export default function PremLeague() {
             }
             });
             var data = await response.json();
+            
             // console.log(data)
             let curr_length = data.response.length;
 
