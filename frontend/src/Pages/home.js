@@ -20,8 +20,16 @@ export default function Home() {
                 <p>You won't find anything like this anywhere else.</p>
             </div>
         </div>
+        <footer>
+            <br></br>
+            <a href="https://github.com/ShreyasK412/35L-Final-Project"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50px" height="50px"/></a>
+            <a href="https://www.reddit.com/r/ucla/"><img src="https://www.redditinc.com/assets/images/site/reddit-logo.png" width="50px" height="50px"/></a>
+            <a href="https://twitter.com/ucla"><img src="https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg" width="50px" height="50px"/></a>
+
+        </footer>
         
 
         </>
     )
 }
+ 
