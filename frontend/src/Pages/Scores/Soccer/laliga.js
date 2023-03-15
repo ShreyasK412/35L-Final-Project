@@ -168,7 +168,7 @@ export default function LaLiga() {
                 </tbody>
             </table>
             </div>
-            <div className="fixtures-container-laliga" dangerouslySetInnerHTML={{ __html: fixtureTable }}>
+            <div className="fixtures-container-laliga" dangerouslySetInnerHTML={{ __html: fixtureTable }} >
             </div>
         </div>
       )
