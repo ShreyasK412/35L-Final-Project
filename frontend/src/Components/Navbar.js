@@ -21,7 +21,10 @@ function Navbar () {
             <a href = "home"> Home </a>
             <a href = "posts"> Posts </a>
             <a href = "news"> News </a>
-            <a href = "scores"> Scores </a>
+            <a href = "scores"> Scores </a>  
+            {/* <a href = "basketball"> Basketball </a>
+            <a href = "soccer"> Soccer </a>
+            <a href = "football"> Football </a> */}
             <a href = "about"> About </a>  
          
             <button className = "nav-btn nav-close-btn" onClick = {showNavbar}>

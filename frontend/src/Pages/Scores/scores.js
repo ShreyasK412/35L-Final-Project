@@ -1,20 +1,33 @@
 
 import './scores.css';
-import React from 'react';
 import Soccer from './Soccer/soccer'
 import Basketball from './Basketball/basketball'
+import React from 'react'
+import ScoreNavbar from '../../Components/ScoreNav';
+import Home from '../home';
 
-export default function Scores() {
-    return (
-        <div>
-        <div className="basketball-section">
-            <Basketball/>
-        </div>
-        <br/>
-        <div className="soccer-section">
-            <Soccer/>
-        </div>
-        </div>
-    )
+
+
+function Scores () {
+    let component
+    switch (window.location.pathname) {
+      case "basketball":
+       component = <Basketball />
+       break
+       case "soccer":
+       component = <Soccer />
+       break
+       case "football":
+       component = <Home />
+       break
+ 
+    }
+     return (<>
+     <ScoreNavbar/>
+     <div className='container'> {component}
+     </div>
+     
+     </>); 
 }
+export default Scores
 

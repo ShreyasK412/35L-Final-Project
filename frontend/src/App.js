@@ -6,7 +6,9 @@ import Home from "./Pages/home"
 import Scores from './Pages/Scores/scores'
 import News from './Pages/news'
 import Posts from './Pages/posts'
-
+import Basketball from './Pages/Scores/Basketball/basketball'
+import BasketballStandings from './Pages/Scores/Basketball/nba-standings'
+import Soccer from './Pages/Scores/Soccer/soccer'
 
 function App () {  
     let component
@@ -29,7 +31,12 @@ function App () {
       case "/posts":
       component = <Posts />
       break
-     
+      case "/basketball":
+      component = <Basketball />
+      break
+      case "/soccer":
+        component = <Soccer />
+        break
 
    }
     return (<>

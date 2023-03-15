@@ -1,21 +1,22 @@
-import './premleague.css';
+import './laliga.css';
 import React, {useState, useEffect} from 'react';
 
 const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
 
-export default function PremLeague() {
+export default function LaLiga() {
 
     const [fixtureTable, setFixtureTable] = useState('');
 
     const getFixtureTable = async () => {
         let currentDate = new Date();
+
         while (true) {
             const year = currentDate.getFullYear();
             const month = String(currentDate.getMonth() + 1).padStart(2, '0');
             const day = String(currentDate.getDate()).padStart(2, '0');
             const dateString = `${year}-${month}-${day}`;
 
-            let url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
+            let url = `https://v3.football.api-sports.io/fixtures?league=140&season=2022&date=${dateString}`;
 
             const response = await fetch(url, {
             "method": "GET",
@@ -30,18 +31,18 @@ export default function PremLeague() {
 
             if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)
             {
-                currentDate.setDate(currentDate.getDate() - 1);
+                currentDate.setDate(currentDate.getDate() - 1)
             }
             else
             {
                 break;
             }
         }
-        
+
         const fixturesData = data.response;
         let tableHtml = `
-        <h1 class="recentresults">Recent Matchday Results <img class="premleagueicon2" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
-        <table id="fixtures-table">
+        <h1 class="recentresults-laliga">Recent Matchday Results <img class="laligaicon2" src="https://media.api-sports.io/football/leagues/140.png" alt=""></img></h1>
+        <table id="fixtures-table-laliga">
             <thead>
             <tr>
                 <th>Home Team</th>
@@ -102,7 +103,7 @@ export default function PremLeague() {
         .catch(err => console.log(err));
     }, []);
 
-    const url = "https://v3.football.api-sports.io/standings?league=39&season=2022";
+    const url = "https://v3.football.api-sports.io/standings?league=140&season=2022";
     fetch(url, {
         "method": "GET",
         "headers": {
@@ -113,11 +114,11 @@ export default function PremLeague() {
 
     .then(response => response.json())
     .then(data => {
-
+        // console.log(data);
         const standingsData = data.response[0].league.standings[0];
         const sortedData = standingsData.sort((a, b) => a.rank - b.rank);
 
-        const tbody = document.querySelector('#standings-table tbody');
+        const tbody = document.querySelector('#standings-table-laliga tbody');
         tbody.innerHTML = ``;
         
         sortedData.forEach((team, index) => {
@@ -146,10 +147,10 @@ export default function PremLeague() {
     });
 
     return (
-        <div className="soccer-container">
-            <div className="standings-container">
-            <h1 className="premleague">Premier League Standings <img className="premleagueicon" src="https://media.api-sports.io/football/leagues/39.png" alt=""></img></h1>
-            <table id="standings-table">
+        <div className="soccer-container-laliga">
+            <div className="standings-container-laliga">
+            <h1 className="laliga">La Liga Standings <img className="laligaicon" src="https://media.api-sports.io/football/leagues/140.png" alt=""></img></h1>
+            <table id="standings-table-laliga">
                 <thead>
                 <tr>
                     <th>Club</th>
@@ -167,7 +168,7 @@ export default function PremLeague() {
                 </tbody>
             </table>
             </div>
-            <div className="fixtures-container" dangerouslySetInnerHTML={{ __html: fixtureTable }}>
+            <div className="fixtures-container-laliga" dangerouslySetInnerHTML={{ __html: fixtureTable }} >
             </div>
         </div>
       )

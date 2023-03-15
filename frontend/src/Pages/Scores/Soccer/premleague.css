@@ -1,149 +1,149 @@
-.container {
-    display: flex;
-    width: 100%;
-  }
-  
-  .standings-container,
-  .fixtures-container {
-    flex: 1;
-    margin-left: 15px;
-    margin-right: 15px;
-    width: 100%;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    text-align: center;
-    padding: 12px;
-  }
-  
-  th {
-    background-color: rgb(102, 102, 102);
-    color: rgb(0, 0, 0);
-  }
-  
-  /* Set alternating row background colors */
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  /* Set hover styles for rows */
-  tbody tr:hover {
-    background-color: #ddd;
-  }
-  
-  /* Set column styles */
-  th:first-child,
-  td:first-child {
-    text-align: center;
-  }
-  
-  th:nth-child(2),
-  td:nth-child(2) {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  
-  /* Set styles for table header */
-  #standings-table th {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  /* Set styles for first column */
-  #standings-table td:first-child {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  /* Set styles for team name column */
-  #standings-table td:nth-child(2) {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  /* Set styles for position column */
-  #standings-table td:nth-child(1) {
-    font-size: 1.2rem;
-  }
-  
-  /* Set styles for points column */
-  #standings-table td:last-child {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-  }
-  
-  #standings-table tr:nth-child(-n+20) {
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-  }
-  
-  #standings-table td .rank {
-    width: 20%;
-    text-align: center;
-  }
-  
-  #standings-table td .logos {
-    max-height: 1.2rem;
-    width: auto;
-  }
-  
-  #standings-table td .team-name {
-    width: 70%;
-  }
-  
-  .premleague {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    width: 100%;
-  }
-  
-  .premleagueicon {
-    max-height: 2rem;
-    max-width: 2rem;
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-  }
-  
-  .recentresults {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    width: 100%;
-  }
-  
-  .premleagueicon2 {
-    max-height: 2rem;
-    max-width: 2rem;
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-  }
-  
-  #fixtures-table th {
-    font-size: 1.5rem;
-    align-items: center;
-  }
-  
-  #fixtures-table td {
-    font-size: 2.0rem;
-    color:rgb(0,0,0);
-  }
-  
-  #fixtures-table td .logos {
-    max-height: 4.0rem;
-    max-width: 4.0rem;
-  }
+.soccer-container {
+  display: flex;
+  width: 100%;
+}
+
+.standings-container,
+.fixtures-container {
+  flex: 1;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 12px;
+}
+
+th {
+  background-color: rgb(102, 102, 102);
+  color: rgb(0, 0, 0);
+}
+
+/* Set alternating row background colors */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Set hover styles for rows */
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Set column styles */
+th:first-child,
+td:first-child {
+  text-align: center;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Set styles for table header */
+#standings-table th {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Set styles for first column */
+#standings-table td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Set styles for team name column */
+#standings-table td:nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Set styles for position column */
+#standings-table td:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+/* Set styles for points column */
+#standings-table td:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+#standings-table tr:nth-child(-n+20) {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+}
+
+#standings-table td .rank {
+  width: 20%;
+  text-align: center;
+}
+
+#standings-table td .logos {
+  max-height: 1.2rem;
+  width: auto;
+}
+
+#standings-table td .team-name {
+  width: 70%;
+}
+
+.premleague {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  width: 100%;
+}
+
+.premleagueicon {
+  max-height: 2rem;
+  max-width: 2rem;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
+
+.recentresults {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  width: 100%;
+}
+
+.premleagueicon2 {
+  max-height: 2rem;
+  max-width: 2rem;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
+
+#fixtures-table th {
+  font-size: 1.5rem;
+  align-items: center;
+}
+
+#fixtures-table td {
+  font-size: 2.0rem;
+  color:rgb(0,0,0);
+}
+
+#fixtures-table td .logos {
+  max-height: 4.0rem;
+  max-width: 4.0rem;
+}

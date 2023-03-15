@@ -1,8 +1,17 @@
-
-.soccer-section {
-  width: 100%;
+header .nav-btn2 {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var (--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 2rem;
 }
-
-.basketball-section {
-  width:100%;
+.container2 {
+  margin: 2rem;
+  text-align: center;
+  font-size: 4.0rem;
+  color: var(--mainColorLight);
 }
