@@ -168,7 +168,16 @@ export default function Posts() {
                 updateLikes={handleLikesUpdate}
               />
               <p className="post-likes">{post.likes} Likes</p>
-              <p className="post-timestamp">{post.createdAt}</p>
+              <p className="post-timestamp">
+                {new Date(post.createdAt).toLocaleString('en-US', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+                  timeZone: 'UTC'
+                })}
+              </p>
             </div>
           </div>
         </div>
