@@ -2,10 +2,9 @@
 import './scores.css';
 import Soccer from './Soccer/soccer'
 import Basketball from './Basketball/basketball'
+import Football from './Football/football'
 import React from 'react'
 import ScoreNavbar from '../../Components/ScoreNav';
-import Home from '../home';
-import { FaAlignLeft } from 'react-icons/fa';
 
 
 
@@ -19,7 +18,7 @@ function Scores () {
        component = <Soccer />
        break
        case "football":
-       component = <Home />
+       component = <Football />
        break
  
     }
