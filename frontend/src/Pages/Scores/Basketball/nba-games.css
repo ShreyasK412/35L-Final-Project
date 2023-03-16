@@ -9,20 +9,27 @@
     max-width:80%;
     margin: 0 auto;
   }
-  
   #fixtures-table-nba {
     max-width: 80%;
-    margin: 0 auto;
+    margin-left: 100px;
+    text-align: center;
   }
 
   #fixtures-table-nba th {
     font-size: 1.5rem;
     align-items: center;
+    text-align: center;
+  }
+
+  .fixtures-header-nba {
+    text-align: center;
   }
   
   #fixtures-table-nba td {
     font-size: 2.0rem;
     color:rgb(0,0,0);
+    text-align: center;
+    max-width: 30%;
   }
   
   #fixtures-table-nba td .logos {

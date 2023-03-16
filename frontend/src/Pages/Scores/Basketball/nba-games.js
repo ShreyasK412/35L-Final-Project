@@ -54,7 +54,7 @@ export default function BasketballGames() {
         let tableHtml = `
         <h1 class="recentresults-nba">Recent Game Results</h1>
         <table id="fixtures-table-nba">
-            <thead>
+            <thead class="fixtures-header-nba">
             <tr>
                 <th>Home Team</th>
                 <th>Score</th>

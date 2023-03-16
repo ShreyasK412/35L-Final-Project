@@ -13,12 +13,17 @@
   #fixtures-table-nfl {
     max-width: 80%;
     margin: 0 auto;
+    margin-left: 115px;
   }
 
   #fixtures-table-nfl th {
     font-size: 1.5rem;
     align-items: center;
   }
+
+  #fixtures-table-nfl th:nth-child(2) {
+    text-align: center;
+}
   
   #fixtures-table-nfl td {
     font-size: 2.0rem;
