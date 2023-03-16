@@ -7,8 +7,8 @@ import Scores from './Pages/Scores/scores'
 import News from './Pages/news'
 import Posts from './Pages/posts'
 import Basketball from './Pages/Scores/Basketball/basketball'
-import BasketballStandings from './Pages/Scores/Basketball/nba-standings'
 import Soccer from './Pages/Scores/Soccer/soccer'
+import Football from './Pages/Scores/Football/football'
 
 function App () {  
     let component
@@ -36,6 +36,9 @@ function App () {
       break
       case "/soccer":
         component = <Soccer />
+        break
+      case "/football":
+        component = <Football />
         break
 
    }

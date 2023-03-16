@@ -1,7 +1,7 @@
 import './premleague.css';
 import React, {useState, useEffect} from 'react';
 
-const FOOTBALL_KEY = "25e3dcc42b7508519df698b88599a569";
+const SOCCER_KEY = "25e3dcc42b7508519df698b88599a569";
 
 export default function PremLeague() {
 
@@ -21,7 +21,7 @@ export default function PremLeague() {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "v3.football.api-sports.io",
-                "x-rapidapi-key": FOOTBALL_KEY,
+                "x-rapidapi-key": SOCCER_KEY,
             }
             });
             var data = await response.json();
@@ -108,7 +108,7 @@ export default function PremLeague() {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": FOOTBALL_KEY,
+            "x-rapidapi-key": SOCCER_KEY,
         }
     })
 
