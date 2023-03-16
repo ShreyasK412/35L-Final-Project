@@ -39,3 +39,20 @@
 .sort-buttons button {
   margin-right: 10px;
 }
+
+.title-text-area {
+  height: 30px;
+  font-size: 25px;
+  width: 40%;
+}
+
+.content-text-area {
+  height: 100px;
+  width: 46%;
+  font-size: 20px;
+}
+
+.title-for-posts {
+  font-size: 40px;
+  padding-right: 5px;
+}
