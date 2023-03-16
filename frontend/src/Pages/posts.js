@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Components/Navbar';
 import './posts.css';
+
+
 
 function LikeButton({ postId, likes, updateLikes }) {
   const [isLiked, setIsLiked] = useState(false);
+
+  useEffect(() => {
+    const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '{}');
+    setIsLiked(!!likedPosts[postId]);
+  }, [postId]);
 
   const handleLikeClick = async () => {
     try {
@@ -17,8 +23,16 @@ function LikeButton({ postId, likes, updateLikes }) {
         throw new Error('Failed to update like.');
       }
 
+      const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '{}');
+      if (isLiked) {
+        delete likedPosts[postId];
+      } else {
+        likedPosts[postId] = true;
+      }
+      localStorage.setItem('likedPosts', JSON.stringify(likedPosts));
+
       setIsLiked(!isLiked);
-      updateLikes(isLiked ? likes - 1 : likes + 1);
+      updateLikes(postId, !isLiked ? likes + 1 : likes - 1);
     } catch (error) {
       console.error(error);
     }
@@ -30,6 +44,7 @@ function LikeButton({ postId, likes, updateLikes }) {
     </button>
   );
 }
+
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
@@ -80,6 +95,14 @@ export default function Posts() {
     );
   };
 
+  const handleSortNewest = () => {
+    setPosts((prevPosts) => [...prevPosts].sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
+  };
+
+  const handleSortOldest = () => {
+    setPosts((prevPosts) => [...prevPosts].sort((a, b) => a.createdAt.localeCompare(b.createdAt)));
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -102,38 +125,38 @@ export default function Posts() {
 
   return (
     <div align="center" className="create-post">
-  <h1>Create a new post</h1>
-  <form onSubmit={handleSubmit}>
-    <div>
-      <label htmlFor="title">Title:</label>
-      <input
-        type="text"
-        id="title"
-        value={title}
-        onChange={handleTitleChange}
-      />
-    </div>
-    <div>
-      <label htmlFor="content">Content:</label>
-      <textarea
-        id="content"
-        value={content}
-        onChange={handleContentChange}
-      />
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-  {error && <p>{error}</p>}
-
-
+      <h1>Create a new post</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="title" className="title-for-posts">Title:</label>
+          <textarea className="title-text-area"          type="text"
+          id="title"
+          value={title}
+          onChange={handleTitleChange}
+        />
+      </div>
+      <div>
+        <textarea className="content-text-area"
+          id="content"
+          value={content}
+          onChange={handleContentChange}
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    {error && <p>{error}</p>}
     <div className="post-container">
-      {/* ... */}
+      <div className="sort-buttons">
+        <button onClick={handleSortNewest}>Newest First</button>
+        <button onClick={handleSortOldest}>Oldest First</button>
+      </div>
       {posts.map((post) => (
         <div className="post-box" key={post._id}>
           <div className="post">
             <div className="post-header">
-              <h2 className="post-title" style={{ textAlign: "center" }}>{post.title} </h2>
-              <p className="post-timestamp">{post.createdAt}</p>
+              <h2 className="post-title" style={{ textAlign: "left" }}>
+                {post.title}
+              </h2>
             </div>
             <p className="post-content">{post.content}</p>
             <div className="post-footer">
@@ -143,12 +166,22 @@ export default function Posts() {
                 updateLikes={handleLikesUpdate}
               />
               <p className="post-likes">{post.likes} Likes</p>
+              <p className="post-timestamp">
+                {new Date(post.createdAt).toLocaleString('en-US', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+                  timeZone: 'PST'
+                })}
+              </p>
             </div>
           </div>
         </div>
       ))}
     </div>
-    </div>
+  </div>
   );
 }
-  
+

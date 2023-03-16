@@ -54,7 +54,7 @@ export default function BasketballGames() {
         let tableHtml = `
         <h1 class="recentresults-nba">Recent Game Results</h1>
         <table id="fixtures-table-nba">
-            <thead>
+            <thead class="fixtures-header-nba">
             <tr>
                 <th>Home Team</th>
                 <th>Score</th>
@@ -80,7 +80,19 @@ export default function BasketballGames() {
                         <span class="team-name">${homeTeam.nickname}</span>
                     </td>
                     <td>
-                        <span class="score">${score.home.points} - ${score.visitors.points}</span>
+                        <span style="color: ${score.home.points > score.visitors.points ? 'green' : (score.home.points < score.visitors.points ? 'red' : 'black')}">
+                        ${score.home.points > score.visitors.points ? 'W' : (score.home.points < score.visitors.points ? 'L' : 'D')}
+                        </span>
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        <span style="color: ${score.home.points < score.visitors.points ? 'green' : (score.home.points > score.visitors.points ? 'red' : 'black')}">
+                            ${score.home.points < score.visitors.points ? 'W' : (score.home.points > score.visitors.points ? 'L' : 'D')}
+                        </span>
+                        <br/>
+                        <span class="score">
+                        ${score.home.points} - ${score.visitors.points}
+                        </span>
                     </td>
                     <td>
                         <img src=${awayTeam.logo} class="logos">

@@ -5,7 +5,8 @@ const {
   getPost,
   createPost,
   deletePost, 
-  updatePost
+  updatePost,
+  updatePostLikes
 } = require('../controllers/postController')
 
 const router = express.Router()
@@ -24,6 +25,7 @@ router.post('/', createPost)
 // DELETE a post
 router.delete('/:id', deletePost)
 
+router.put('/:id/like', updatePostLikes);
 // UPDATE a post
 router.patch('/:id', updatePost)
 

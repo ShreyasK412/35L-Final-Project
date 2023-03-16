@@ -66,7 +66,7 @@ const deletePost = async (req, res) => {
     try {
       const post = await Post.findByIdAndUpdate(
         id,
-        { ...req.body },
+        { $inc: { likes: 1 }, ...req.body },
         { new: true }
       );
       res.status(200).json(post);
@@ -74,11 +74,33 @@ const deletePost = async (req, res) => {
       res.status(400).json({ error: error.message });
     }
   };
+
+  const updatePostLikes = async (req, res) => {
+    const { id } = req.params;
+    const { isLiked } = req.body;
+    
+    try {
+      let post = await Post.findById(id);
+      if (!post) {
+        return res.status(404).json({ error: 'No such post' });
+      }
+  
+      const likeChange = isLiked ? 1 : -1;
+      post.likes = Math.max(post.likes + likeChange, 0);
+      await post.save();
+  
+      res.status(200).json(post);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  };
+  
   
   module.exports = {
     getPosts,
     getPost,
     createPost,
     deletePost,
-    updatePost
+    updatePost,
+    updatePostLikes
   }

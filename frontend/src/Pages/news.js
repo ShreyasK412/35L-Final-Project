@@ -17,11 +17,40 @@ export default function News() {
       sourceType="profile"
       theme="dark"
       tweetLimit={100}
-      placeholder={<div style={{backgroundColor: 'black', color: 'white', margin: 10, padding: 10}}>Loading...</div>}
+      placeholder={<div style={{backgroundColor: 'black', color: 'white', margin: 10, padding: 10}}>Loading NBA News...</div>}
+    />
+
+<TwitterTimelineEmbed
+      onLoad={function noRefCheck(){}}
+      options={{
+        height: 1000
+      
+        
+      }}
+      screenName="SkySportsPL"
+      sourceType="profile"
+      theme="dark"
+      tweetLimit={100}
+      placeholder={<div style={{backgroundColor: 'black', color: 'white', margin: 10, padding: 10}}>Loading Prem News...</div>}
+    />
+     <TwitterTimelineEmbed
+      onLoad={function noRefCheck(){}}
+      options={{
+        height: 1000
+      
+        
+      }}
+      screenName="Underdog__NFL"
+      sourceType="profile"
+      theme="dark"
+      tweetLimit={100}
+      placeholder={<div style={{backgroundColor: 'black', color: 'white', margin: 10, padding: 10}}>Loading NFL News...</div>}
     />
   </div>
+
 </div>
 </div>
+
 
 
 

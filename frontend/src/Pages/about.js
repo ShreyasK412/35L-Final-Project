@@ -5,8 +5,7 @@ export default function About() {
     return (<div className="centerContent">
     <div className="selfCenter spaceBetween">
     <div align="center">
-      <TwitterTimelineEmbed
-        onLoad={function noRefCheck(){}}
+      <TwitterTimelineEmbed onLoad={function noRefCheck(){}}
         options={{
           height: 1000
         
