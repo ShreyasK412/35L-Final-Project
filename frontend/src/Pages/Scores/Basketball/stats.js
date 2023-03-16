@@ -57,6 +57,7 @@ class Stats extends Component {
     
     render(){
     return (
+      
       <div className="PlayerStats">
        <form onSubmit={this.handleSubmit}>
         <h2> NBA Player Stats </h2>

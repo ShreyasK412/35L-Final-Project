@@ -23,10 +23,10 @@ export default function Home() {
         <footer>
             <br></br>
             <div>
-            <a href="https://github.com/ShreyasK412/35L-Final-Project"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="100px" height="50px"/></a>
-            <a href="https://www.reddit.com/r/ucla/"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/52/52053.png" width="100px" height="50px"/></a>
-            <a href="https://twitter.com/ucla"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/60/60580.png" width="100px" height="50px"/></a>
-            <a href="https://www.instagram.com/ucla"><img class="footerimages" src="https://www.pngall.com/wp-content/uploads/5/Instagram-Logo.png" width="100px" height="50px"/></a>
+            <a href="https://github.com/ShreyasK412/35L-Final-Project"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="100px" height="100px"/></a>
+            <a href="https://www.reddit.com/r/ucla/"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/52/52053.png" width="100px" height="100px"/></a>
+            <a href="https://twitter.com/ucla"><img class="footerimages" src="https://cdn-icons-png.flaticon.com/512/60/60580.png" width="100px" height="100x"/></a>
+            <a href="https://www.instagram.com/ucla"><img class="footerimages" src="https://www.pngall.com/wp-content/uploads/5/Instagram-Logo.png" width="100px" height="100px"/></a>
             </div>
         </footer>
         
