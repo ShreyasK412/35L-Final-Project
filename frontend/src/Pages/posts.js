@@ -132,8 +132,8 @@ export default function Posts() {
         <div className="post-box" key={post._id}>
           <div className="post">
             <div className="post-header">
-              <h2 className="post-title" style={{ textAlign: "center" }}>{post.title} </h2>
-              <p className="post-timestamp">{post.createdAt}</p>
+              <h2 className="post-title" style={{ textAlign: "left" }}>{post.title} </h2>
+             
             </div>
             <p className="post-content">{post.content}</p>
             <div className="post-footer">
@@ -143,6 +143,7 @@ export default function Posts() {
                 updateLikes={handleLikesUpdate}
               />
               <p className="post-likes">{post.likes} Likes</p>
+              <p className="post-timestamp">{post.createdAt} </p>
             </div>
           </div>
         </div>
