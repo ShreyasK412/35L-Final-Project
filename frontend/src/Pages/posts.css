@@ -32,3 +32,10 @@
 .post-content {
   text-align: right;
 }
+.sort-buttons {
+  margin-bottom: 20px;
+}
+
+.sort-buttons button {
+  margin-right: 10px;
+}

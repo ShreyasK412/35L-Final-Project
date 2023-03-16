@@ -10,7 +10,7 @@ function LikeButton({ postId, likes, updateLikes }) {
       const response = await fetch(`http://localhost:4000/api/posts/${postId}/like`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ isLiked: !isLiked }),
+        body: JSON.stringify({ isLiked: isLiked }),
       });
 
       if (!response.ok) {
@@ -18,11 +18,12 @@ function LikeButton({ postId, likes, updateLikes }) {
       }
 
       setIsLiked(!isLiked);
-      updateLikes(isLiked ? likes - 1 : likes + 1);
+      updateLikes(postId, !isLiked ? likes + 1 : likes - 1);
     } catch (error) {
       console.error(error);
     }
   };
+
 
   return (
     <button className="like-button" onClick={handleLikeClick}>
@@ -80,6 +81,14 @@ export default function Posts() {
     );
   };
 
+  const handleSortNewest = () => {
+    setPosts((prevPosts) => [...prevPosts].sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
+  };
+
+  const handleSortOldest = () => {
+    setPosts((prevPosts) => [...prevPosts].sort((a, b) => a.createdAt.localeCompare(b.createdAt)));
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -102,38 +111,39 @@ export default function Posts() {
 
   return (
     <div align="center" className="create-post">
-  <h1>Create a new post</h1>
-  <form onSubmit={handleSubmit}>
-    <div>
-      <label htmlFor="title">Title:</label>
-      <input
-        type="text"
-        id="title"
-        value={title}
-        onChange={handleTitleChange}
-      />
-    </div>
-    <div>
-      <label htmlFor="content">Content:</label>
-      <textarea
-        id="content"
-        value={content}
-        onChange={handleContentChange}
-      />
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-  {error && <p>{error}</p>}
-
-
+      <h1>Create a new post</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="title">Title:</label>
+          <input          type="text"
+          id="title"
+          value={title}
+          onChange={handleTitleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="content">Content:</label>
+        <textarea
+          id="content"
+          value={content}
+          onChange={handleContentChange}
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    {error && <p>{error}</p>}
     <div className="post-container">
-      {/* ... */}
+      <div className="sort-buttons">
+        <button onClick={handleSortNewest}>Newest First</button>
+        <button onClick={handleSortOldest}>Oldest First</button>
+      </div>
       {posts.map((post) => (
         <div className="post-box" key={post._id}>
           <div className="post">
             <div className="post-header">
-              <h2 className="post-title" style={{ textAlign: "left" }}>{post.title} </h2>
-             
+              <h2 className="post-title" style={{ textAlign: "left" }}>
+                {post.title}
+              </h2>
             </div>
             <p className="post-content">{post.content}</p>
             <div className="post-footer">
@@ -143,13 +153,13 @@ export default function Posts() {
                 updateLikes={handleLikesUpdate}
               />
               <p className="post-likes">{post.likes} Likes</p>
-              <p className="post-timestamp">{post.createdAt} </p>
+              <p className="post-timestamp">{post.createdAt}</p>
             </div>
           </div>
         </div>
       ))}
     </div>
-    </div>
+  </div>
   );
 }
-  
+
