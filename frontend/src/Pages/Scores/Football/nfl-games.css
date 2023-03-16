@@ -1,0 +1,38 @@
+.recentresults-nfl {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    width: 100%;
+    max-width:80%;
+    margin: 0 auto;
+  }
+  
+  #fixtures-table-nfl {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  #fixtures-table-nfl th {
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  
+  #fixtures-table-nfl td {
+    font-size: 2.0rem;
+    color:rgb(0,0,0);
+  }
+  
+  #fixtures-table-nfl td .logos {
+    max-height: 4.0rem;
+    max-width: 4.0rem;
+  }
+
+  .superbowlicon {
+    max-height: 20rem;
+    max-width: 20rem;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+  }
