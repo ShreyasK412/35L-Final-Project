@@ -15,3 +15,8 @@ header .nav-btn2 {
   font-size: 4.0rem;
   color: var(--mainColorLight);
 }
+
+.league_icons {
+  width: auto;
+  height: 4rem;
+}
