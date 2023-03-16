@@ -2,20 +2,35 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import './posts.css';
 
+
+
 function LikeButton({ postId, likes, updateLikes }) {
   const [isLiked, setIsLiked] = useState(false);
+
+  useEffect(() => {
+    const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '{}');
+    setIsLiked(!!likedPosts[postId]);
+  }, [postId]);
 
   const handleLikeClick = async () => {
     try {
       const response = await fetch(`http://localhost:4000/api/posts/${postId}/like`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ isLiked: isLiked }),
+        body: JSON.stringify({ isLiked: !isLiked }),
       });
 
       if (!response.ok) {
         throw new Error('Failed to update like.');
       }
+
+      const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '{}');
+      if (isLiked) {
+        delete likedPosts[postId];
+      } else {
+        likedPosts[postId] = true;
+      }
+      localStorage.setItem('likedPosts', JSON.stringify(likedPosts));
 
       setIsLiked(!isLiked);
       updateLikes(postId, !isLiked ? likes + 1 : likes - 1);
@@ -24,13 +39,13 @@ function LikeButton({ postId, likes, updateLikes }) {
     }
   };
 
-
   return (
     <button className="like-button" onClick={handleLikeClick}>
       {isLiked ? 'Unlike' : 'Like'} ({likes})
     </button>
   );
 }
+
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
