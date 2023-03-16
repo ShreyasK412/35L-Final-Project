@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Components/Navbar';
 import './posts.css';
 
 
@@ -129,16 +128,15 @@ export default function Posts() {
       <h1>Create a new post</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title:</label>
-          <input          type="text"
+          <label htmlFor="title" className="title-for-posts">Title:</label>
+          <textarea className="title-text-area"          type="text"
           id="title"
           value={title}
           onChange={handleTitleChange}
         />
       </div>
       <div>
-        <label htmlFor="content">Content:</label>
-        <textarea
+        <textarea className="content-text-area"
           id="content"
           value={content}
           onChange={handleContentChange}
@@ -175,7 +173,7 @@ export default function Posts() {
                   month: 'long',
                   day: 'numeric',
                   year: 'numeric',
-                  timeZone: 'UTC'
+                  timeZone: 'PST'
                 })}
               </p>
             </div>
