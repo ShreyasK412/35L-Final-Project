@@ -15,7 +15,7 @@ function ScoreNavbar () {
     return (<header style={{ display: "flex", justifyContent: "center" }}>
         <h3> <src border="" height="100" width="100"
     onload="resizeImg(this, 200, 100);"  /> </h3>
-        <nav ref={navRef}>
+        <nav ref={navRef} style={{ marginLeft: '175px' }}>
         
             <a href = "basketball"> Basketball </a>
             <a href = "soccer"> Soccer </a>
