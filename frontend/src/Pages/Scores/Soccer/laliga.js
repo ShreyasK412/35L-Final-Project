@@ -14,7 +14,7 @@ export default function LaLiga() {
             const year = currentDate.getFullYear();
             const month = String(currentDate.getMonth() + 1).padStart(2, '0');
             const day = String(currentDate.getDate()).padStart(2, '0');
-            const dateString = `${year}-${month}-${day}`;
+            const dateString = `2023-03-12`;
 
             let url = `https://v3.football.api-sports.io/fixtures?league=140&season=2022&date=${dateString}`;
 

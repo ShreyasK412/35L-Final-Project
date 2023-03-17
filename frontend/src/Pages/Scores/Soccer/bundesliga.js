@@ -14,7 +14,8 @@ export default function Bundesliga() {
             const year = currentDate.getFullYear();
             const month = String(currentDate.getMonth() + 1).padStart(2, '0');
             const day = String(currentDate.getDate()).padStart(2, '0');
-            const dateString = `${year}-${month}-${day}`;
+            const dateString = `2023-03-12`;
+            //${year}-${month}-${day}
 
             let url = `https://v3.football.api-sports.io/fixtures?league=78&season=2022&date=${dateString}`;
 
@@ -26,7 +27,7 @@ export default function Bundesliga() {
             }
             });
             var data = await response.json();
-            // console.log(data)
+            console.log(data)
             let curr_length = data.response.length;
 
             if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)

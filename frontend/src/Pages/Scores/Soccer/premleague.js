@@ -13,7 +13,7 @@ export default function PremLeague() {
             const year = currentDate.getFullYear();
             const month = String(currentDate.getMonth() + 1).padStart(2, '0');
             const day = String(currentDate.getDate()).padStart(2, '0');
-            const dateString = `${year}-${month}-${day}`;
+            const dateString = `2023-03-15`;
 
             let url = `https://v3.football.api-sports.io/fixtures?league=39&season=2022&date=${dateString}`;
 
@@ -29,7 +29,7 @@ export default function PremLeague() {
             // console.log(data)
             let curr_length = data.response.length;
 
-            if (curr_length === 0 || data.response[curr_length - 1].goals.home === null || data.response[curr_length-1].goals.away === null)
+            if (curr_length === 0 || data.response[curr_length - 1].score.home === null || data.response[curr_length-1].goals.away === null)
             {
                 currentDate.setDate(currentDate.getDate() - 1);
             }
