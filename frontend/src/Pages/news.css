@@ -1,0 +1,7 @@
+.tweet_box {
+    margin: 2rem;
+    text-align: center;
+    font-size: 4.0rem;
+    color: var(--mainColorLight);
+    padding-bottom: 2rem;
+}
