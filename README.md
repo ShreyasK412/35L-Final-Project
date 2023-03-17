@@ -14,7 +14,7 @@ In the backend directory, you can run:
 
 This installs downloads dependencies defined in the package.json file
 
-### `sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}`
+### `sudo chown -R $(whoami) $(npm config get prefix)/{lib/### ### node_modules,bin,share}`
 ### `npm install -g nodemon`
 
 This installs Nodemon, a command-line tool that helps update application development changes

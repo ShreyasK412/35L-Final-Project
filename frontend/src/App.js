@@ -1,7 +1,6 @@
 import './App.css'
 import React from 'react'
 import Navbar from "./Components/Navbar"
-import About from "./Pages/about"
 import Home from "./Pages/home"
 import Scores from './Pages/Scores/scores'
 import News from './Pages/news'
@@ -13,9 +12,6 @@ import Football from './Pages/Scores/Football/football'
 function App () {  
     let component
    switch (window.location.pathname) {
-     case "/about":
-      component = <About />
-      break
       case "/":
       component = <Home />
       break

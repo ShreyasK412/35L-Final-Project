@@ -25,7 +25,6 @@ function Navbar () {
             {/* <a href = "basketball"> Basketball </a>
             <a href = "soccer"> Soccer </a>
             <a href = "football"> Football </a> */}
-            <a href = "about"> About </a>  
          
             <button className = "nav-btn nav-close-btn" onClick = {showNavbar}>
                 <FaTimes></FaTimes>
