@@ -11,8 +11,8 @@ function Navbar () {
         navRef.current.classList.toggle("responsive_nav")
     } 
     return (<header>
-        <h3> <img src='BBB.png' border="" height="100" width="100"
-    onload="resizeImg(this, 200, 100);"  /> </h3>
+        <h3> <a href = '/home'> <img src='BBB.png' border="" height="100" width="100"
+    onload="resizeImg(this, 200, 100);"  />  </a> </h3>
         <nav ref={navRef}>
             {/* <ul> <CustomLink href = "home"> Home </CustomLink> 
             <CustomLink href = "posts"> Posts </CustomLink> 
