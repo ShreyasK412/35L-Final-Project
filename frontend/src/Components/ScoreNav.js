@@ -12,7 +12,7 @@ function ScoreNavbar () {
     const showScoreNavbar = () => {
         navRef.current.classList.toggle("responsive_nav")
     } 
-    return (<header style={{ display: "flex", justifyContent: "center", marginLeft: "70px" }}>
+    return (<header style={{ display: "flex", justifyContent: "center" }}>
         <h3> <src border="" height="100" width="100"
     onload="resizeImg(this, 200, 100);"  /> </h3>
         <nav ref={navRef}>
