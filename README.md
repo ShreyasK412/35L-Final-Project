@@ -1,5 +1,13 @@
 # 35L-Final-Project
 
+Created by: Shreyas Kamath, Gabriel Weisiger,
+Joe Shiller, Antonio Cosio, and Matt Yeung
+
+Application was built using the MERN stack.
+
+This app is a way to interact with all your favorite online sports content, from live sports scores, upcoming matches, tweet history from your favorite athletes and organizations, and also a discussion thread to talk about the lastest happenings with your favorite teams and sports. Refer to the presentation in the repository for more details about each feature.
+
+
 ## Clone the Repository
 
 ### `git clone https://github.com/ShreyasK412/35L-Final-Project`
@@ -14,7 +22,7 @@ In the backend directory, you can run:
 
 This installs downloads dependencies defined in the package.json file
 
-### `sudo chown -R $(whoami) $(npm config get prefix)/{lib/### ### node_modules,bin,share}`
+### `sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}`
 ### `npm install -g nodemon`
 
 This installs Nodemon, a command-line tool that helps update application development changes
