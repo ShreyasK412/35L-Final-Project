@@ -1,5 +1,8 @@
 # 35L-Final-Project
 
+This app is a way to interact with all your favorite online sports content, from live sports scores, upcoming matches, tweet history from your favorite athletes and organizations, and also a discussion thread to talk about the lastest happenings with your favorite teams and sports.
+
+You won't find anything like this anywhere else.
 ## Clone the Repository
 
 ### `git clone https://github.com/ShreyasK412/35L-Final-Project`
