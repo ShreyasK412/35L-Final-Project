@@ -1,6 +1,6 @@
 # 35L-Final-Project
 
-Created by: Shreyas Kamath, Gabriel Weisiger
+Created by: Shreyas Kamath, Gabriel Weisiger,
 Joe Shiller, Antonio Cosio, and Matt Yeung
 
 Application was built using the MERN stack.
